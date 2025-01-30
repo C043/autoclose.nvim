@@ -108,7 +108,7 @@ local function handler(key, info, mode)
       and (key == "<CR>" or key == "<S-CR>")
       and is_pair(pair)
    then
-      return "<CR><ESC>O" .. (config.options.auto_indent and "" or "<C-D>")
+      return "<CR>"
    elseif info.escape and pair:sub(2, 2) == key then
       return mode == "insert" and "<C-G>U<Right>" or "<Right>"
    elseif info.close then
